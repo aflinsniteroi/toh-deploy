@@ -1,0 +1,11 @@
+<div class="formgroup form-inline">
+  <label> {{ label }}</label>
+  <input type="text" class="form-control ml-3" #searchBox
+    (input)="onSearch(searchBox.value)" />
+
+  <button class="btn btn-secondary"
+    [disabled]="!searchBox.value.trim()"
+    (click)="searchBox.value = '' ">
+    Limpar
+  </button>
+</div>

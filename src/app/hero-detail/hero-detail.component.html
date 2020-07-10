@@ -1,0 +1,23 @@
+<div *ngIf="hero">
+  <h2> {{hero.name | uppercase}} Detalhes:</h2>
+
+  <div class="card">
+   <div class="card-body">
+     <div class="form-group">
+       <label>ID</label>
+       <input type="text" class="form-control" readonly value="{{hero.id}}" />
+     </div>
+
+     <div class="form-group">
+       <label>Nome</label>
+       <input type="text" class="form-control" placeholder="nome do herói" [(ngModel)]="hero.name" />
+     </div>
+     <button class="btn btn-primary mr-3" type="button" [disabled]="!hero.name.trim()" (click)="update()"> Atualizar</button>
+
+     <button class="btn btn-danger mr-3"  type="button"  (click)="delete()"> Excluir</button>
+
+     <button class="btn btn-secondary" type="button" (click)="goBack()"> Back</button>
+    </div>
+  </div>
+</div>
+
