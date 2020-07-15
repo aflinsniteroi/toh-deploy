@@ -25,7 +25,7 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     this.log(this.heroesUrl);
-    console.log(this.httpOptions.headers.get('Authorization'));
+    //console.log(this.httpOptions.headers.get('Authorization'));
 
     return this.http.get<Hero[]>(this.heroesUrl,this.httpOptions).pipe(
       tap( ()=>this.log('obtida lista de heróis')),
