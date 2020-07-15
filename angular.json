@@ -118,6 +118,10 @@
               "devServerTarget": "curso-angular-basico:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
