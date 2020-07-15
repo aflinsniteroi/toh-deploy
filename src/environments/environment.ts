@@ -6,8 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 export const environment = {
   production: false,
-  //baseUrl: 'http://localhost:3000',
-  baseUrl: 'https//toh.api.herokuaeeeeeeepp.com',
+  baseUrl: 'http://localhost:3000',
   headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
 
 };
