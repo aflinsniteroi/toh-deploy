@@ -12,9 +12,11 @@ import { MessageService } from './message.service';
 export class HeroService {
   private heroesUrl = `${environment.baseUrl}/heroes`;
   private httpOptions = {
-    headers: new HttpHeaders(`${environment.headers}`)
-    //headers: new HttpHeaders({ 'Content-Type': 'application/json' ,Authorization: localStorage.getItem('token')}),
-  };
+  headers: new HttpHeaders({
+       'Content-Type': 'application/json' ,
+       Authorization: localStorage.getItem('token')
+      }),
+    };
 
   constructor(
     private http: HttpClient,
@@ -23,6 +25,7 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     this.log(this.heroesUrl);
+    this.log(this.httpOptions.headers.get('Authorization'));
 
     return this.http.get<Hero[]>(this.heroesUrl,this.httpOptions).pipe(
       tap( ()=>this.log('obtida lista de heróis')),
