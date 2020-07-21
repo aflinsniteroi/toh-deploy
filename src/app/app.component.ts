@@ -12,9 +12,11 @@ export class AppComponent {
     { path: '/heroes', text: 'Heróis' },
   ];
 
-  construtor(){
+  constructor(){
     //localstorage é um espaço do browser
-    const token = localStorage.getItem('token');
+    //const token = localStorage.getItem('token');
+    const token = '123';
+    console.log('token ->' + token );
 
     if(!token){
       const randomToken = Math.random().toString(36).substring(-10);
