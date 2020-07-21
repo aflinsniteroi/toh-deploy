@@ -51,7 +51,7 @@ export class HeroService {
 
 
   getHeroes(): Observable<Hero[]> {
-
+  console.log('hro Service -> ' + localStorage.getItem('token'))
     return this.http.get<Hero[]>(this.heroesUrl, this.httpOptions).pipe(
 
       tap(() => this.log('fetched heroes')),
