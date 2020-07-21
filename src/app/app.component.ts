@@ -14,13 +14,13 @@ export class AppComponent {
 
   constructor(){
     //localstorage é um espaço do browser
-    const randomToken = localStorage.getItem('token');
-    console.log('token ->' + randomToken );
+    const token = localStorage.getItem('token');
+    console.log('construido token ->' + token );
 
-    if(!randomToken){
-      const randomToken = Math.random().toString(36).substring(-10);
-      console.log('randon token ->' + randomToken );
-      localStorage.setItem('token',randomToken)
+    if(!token){
+      const token = Math.random().toString(36).substring(-10);
+      console.log('randon token ->' + token );
+      localStorage.setItem('token',token)
     }
   }
 }
